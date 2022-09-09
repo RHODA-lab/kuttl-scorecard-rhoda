@@ -1,0 +1,8 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestSuite
+parallel: 0 # Run tests in serial
+skipDelete: true
+startControlPlane: false
+suppress:
+  - events
+timeout: 60 # timeout in seconds for each step

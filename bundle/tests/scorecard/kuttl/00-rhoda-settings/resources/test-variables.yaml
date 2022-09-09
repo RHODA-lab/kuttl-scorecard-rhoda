@@ -1,0 +1,9 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: rhoda-ci-test-variables
+  namespace: rhoda-ci
+data:
+  test-variables.yaml: >-
+    <<test-variables.yaml>>
+type: Opaque

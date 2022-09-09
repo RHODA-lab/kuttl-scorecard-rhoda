@@ -1,0 +1,14 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestAssert
+timeout: 600
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rhoda-ci-smoke
+status:
+  containerStatuses:
+    - name: rhoda-ci-testrun
+      started: true
+      ready: true
+

@@ -1,0 +1,21 @@
+apiVersion: scorecard.operatorframework.io/v1alpha3
+kind: Configuration
+metadata:
+  name: config
+stages:
+- parallel: true
+  tests:
+  - entrypoint:
+    - entrypoint
+    - 00-rhoda-settings
+    - 01-rhoda-smoke
+    image: quay.io/operator-framework/scorecard-test-kuttl:latest
+    labels:
+      cluster-product: osd
+      cluster-size: medium
+      phase: msp-main
+      test: smoke
+      suite: smoke-suite
+    storage:
+      spec:
+        mountPath: {}
