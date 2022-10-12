@@ -1,4 +1,4 @@
 apiVersion: kuttl.dev/v1beta1
 kind: TestStep
 commands:
-  - script: CRDB_INSTANCE_ID=$(kubectl get DBaaSInventory/cockroach-db-provider-account -n redhat-dbaas-operator -o custom-columns=:.status.instances[0].instanceID | grep -v '^$' ) &&  kubectl get DBaaSConnection crdb-temp --namespace=crdb-test-project -o yaml | sed -e 's/tempvalue/"'${CRDB_INSTANCE_ID}'"/;s/crdb-temp/crdb-connect-bind/' | kubectl create -f -
+  - script: CRDB_INSTANCE_ID=$(kubectl get DBaaSInventory/cockroach-db-provider-account -n redhat-dbaas-operator -o custom-columns=:.status.instances[0].instanceID | grep -v '^$' ) &&  kubectl get DBaaSConnection crdb-temp --namespace=crdb-test-project -o yaml | sed -e 's/tempvalue/"'${CRDB_INSTANCE_ID}'"/;s/crdb-temp/crdb-connect/' | kubectl create -f -

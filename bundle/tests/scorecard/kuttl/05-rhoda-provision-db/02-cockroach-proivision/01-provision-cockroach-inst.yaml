@@ -1,0 +1,12 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSInstance
+metadata:
+  name: cockroach-test-inst-prov
+  namespace: crdb-test-project
+spec:
+  name: cockroach-test-inst-prov
+  inventoryRef:
+    name: cockroach-db-provider-account
+    namespace: redhat-dbaas-operator
+  otherInstanceParams:
+    projectName: cockroach-test-inst-prov

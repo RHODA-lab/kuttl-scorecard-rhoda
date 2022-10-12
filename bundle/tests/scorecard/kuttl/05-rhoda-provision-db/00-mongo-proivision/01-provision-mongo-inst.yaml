@@ -1,0 +1,12 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSInstance
+metadata:
+  name: mongo-test-inst-prov
+  namespace: mongo-test-project
+spec:
+  name: mongo-test-inst-prov
+  inventoryRef:
+    name: mongo-db-provider-account
+    namespace: redhat-dbaas-operator
+  otherInstanceParams:
+    projectName: mongo-test-inst-prov

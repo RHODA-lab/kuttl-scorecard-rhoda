@@ -1,0 +1,16 @@
+apiVersion: binding.operators.coreos.com/v1alpha1
+kind: ServiceBinding
+metadata:
+  name: mongo-dbsc-app-bind
+  namespace: mongo-test-project
+status:
+  conditions:
+    - reason: DataCollected
+      status: 'True'
+      type: CollectionReady
+    - reason: ApplicationUpdated
+      status: 'True'
+      type: InjectionReady
+    - reason: ApplicationsBound
+      status: 'True'
+      type: Ready

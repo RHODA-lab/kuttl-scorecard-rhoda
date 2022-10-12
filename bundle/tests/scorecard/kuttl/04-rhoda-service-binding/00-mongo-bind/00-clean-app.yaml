@@ -1,0 +1,12 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: binding.operators.coreos.com/v1alpha1
+    kind: ServiceBinding
+    name: mongo-dbsc-app-bind
+    namespace: mongo-test-project
+  - apiVersion: apps/v1
+    kind: deployment
+    name: fruit-shop
+    namespace: mongo-test-project
+

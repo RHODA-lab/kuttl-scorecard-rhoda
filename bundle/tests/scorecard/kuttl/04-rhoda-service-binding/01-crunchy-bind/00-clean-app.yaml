@@ -1,0 +1,12 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: binding.operators.coreos.com/v1alpha1
+    kind: ServiceBinding
+    name: crunchy-dbsc-app-bind
+    namespace: crunchy-test-project
+  - apiVersion: apps/v1
+    kind: deployment
+    name: crunchy-quarkus-app
+    namespace: crunchy-test-project
+

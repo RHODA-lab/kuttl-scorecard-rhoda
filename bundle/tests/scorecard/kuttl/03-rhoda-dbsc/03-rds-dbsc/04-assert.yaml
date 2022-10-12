@@ -5,7 +5,7 @@ timeout: 10
 apiVersion: dbaas.redhat.com/v1alpha1
 kind: DBaaSConnection
 metadata:
-  name: rds-connect-bind
+  name: rds-connect
   namespace: rds-test-project
 status:
   conditions:

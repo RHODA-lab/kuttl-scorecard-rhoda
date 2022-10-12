@@ -1,0 +1,7 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSInstance
+    name: mongo-test-inst-prov
+    namespace: mongo-test-project

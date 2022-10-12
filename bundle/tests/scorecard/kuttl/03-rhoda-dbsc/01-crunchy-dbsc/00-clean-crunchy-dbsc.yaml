@@ -7,5 +7,5 @@ delete:
     namespace: crunchy-test-project
   - apiVersion: dbaas.redhat.com/v1alpha1
     kind: DBaaSConnection
-    name: crunchy-connect-bind
+    name: crunchy-connect
     namespace: crunchy-test-project

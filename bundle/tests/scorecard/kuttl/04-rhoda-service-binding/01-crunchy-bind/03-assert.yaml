@@ -1,0 +1,16 @@
+apiVersion: binding.operators.coreos.com/v1alpha1
+kind: ServiceBinding
+metadata:
+  name: crunchy-dbsc-app-bind
+  namespace: crunchy-test-project
+status:
+  conditions:
+    - reason: DataCollected
+      status: 'True'
+      type: CollectionReady
+    - reason: ApplicationUpdated
+      status: 'True'
+      type: InjectionReady
+    - reason: ApplicationsBound
+      status: 'True'
+      type: Ready

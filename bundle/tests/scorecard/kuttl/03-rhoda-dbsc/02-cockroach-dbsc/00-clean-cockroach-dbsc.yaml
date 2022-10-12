@@ -7,5 +7,5 @@ delete:
     namespace: crdb-test-project
   - apiVersion: dbaas.redhat.com/v1alpha1
     kind: DBaaSConnection
-    name: crdb-connect-bind
+    name: crdb-connect
     namespace: crdb-test-project

@@ -1,0 +1,12 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: binding.operators.coreos.com/v1alpha1
+    kind: ServiceBinding
+    name: crdb-dbsc-app-bind
+    namespace: crdb-test-project
+  - apiVersion: apps/v1
+    kind: deployment
+    name: crdb-quarkus-app
+    namespace: crdb-test-project
+

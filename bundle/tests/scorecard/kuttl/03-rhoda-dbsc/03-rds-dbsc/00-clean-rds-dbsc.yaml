@@ -7,5 +7,5 @@ delete:
     namespace: rds-test-project
   - apiVersion: dbaas.redhat.com/v1alpha1
     kind: DBaaSConnection
-    name: rds-connect-bind
+    name: rds-connect
     namespace: rds-test-project
