@@ -1,0 +1,13 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSInventory
+metadata:
+  name: mongo-db-provider-account
+  namespace: redhat-dbaas-operator
+  labels:
+    related-to: dbaas-operator
+    type: dbaas-vendor-service
+spec:
+  credentialsRef:
+    name: mongo-secret
+  providerRef:
+    name: mongodb-atlas-registration

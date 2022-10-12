@@ -1,0 +1,11 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSConnection
+    name: mongo-temp
+    namespace: mongo-test-project
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSConnection
+    name: mongo-connect-bind
+    namespace: mongo-test-project

@@ -1,0 +1,4 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+commands:
+  - script: MONGO_INSTANCE_ID=$(kubectl get DBaaSInventory/mongo-db-provider-account -n redhat-dbaas-operator -o custom-columns=:.status.instances[0].instanceID | grep -v '^$' ) &&  kubectl get DBaaSConnection mongo-temp --namespace=mongo-test-project -o yaml | sed -e 's/tempvalue/"'${MONGO_INSTANCE_ID}'"/;s/mongo-temp/mongo-connect-bind/' | kubectl create -f -

@@ -1,0 +1,15 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestAssert
+timeout: 10
+---
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSInventory
+metadata:
+  name: crunchy-db-provider-account
+  namespace: redhat-dbaas-operator
+status:
+  conditions:
+    - type: SpecSynced
+      status: "True"
+    - type: InventoryReady
+      status: "True"

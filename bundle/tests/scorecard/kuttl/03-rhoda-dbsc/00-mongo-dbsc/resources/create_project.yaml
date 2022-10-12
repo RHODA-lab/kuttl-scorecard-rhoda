@@ -1,0 +1,7 @@
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  name: mongo-test-project
+spec:
+  finalizers:
+  - kubernetes

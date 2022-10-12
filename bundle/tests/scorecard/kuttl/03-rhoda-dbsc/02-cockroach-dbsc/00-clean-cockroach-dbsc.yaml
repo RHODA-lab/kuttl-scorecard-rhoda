@@ -1,0 +1,11 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSConnection
+    name: crdb-temp
+    namespace: crdb-test-project
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSConnection
+    name: crdb-connect-bind
+    namespace: crdb-test-project

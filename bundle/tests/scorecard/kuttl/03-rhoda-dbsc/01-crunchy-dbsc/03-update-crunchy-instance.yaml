@@ -1,0 +1,4 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+commands:
+  - script: CRUNCHY_INSTANCE_ID=$(kubectl get DBaaSInventory/crunchy-db-provider-account -n redhat-dbaas-operator -o custom-columns=:.status.instances[0].instanceID | grep -v '^$' ) &&  kubectl get DBaaSConnection crunchy-temp --namespace=crunchy-test-project -o yaml | sed -e 's/tempvalue/"'${CRUNCHY_INSTANCE_ID}'"/;s/crunchy-temp/crunchy-connect-bind/' | kubectl create -f -

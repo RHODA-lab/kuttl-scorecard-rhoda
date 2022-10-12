@@ -1,0 +1,13 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSInventory
+metadata:
+  name: crunchy-db-provider-account
+  namespace: redhat-dbaas-operator
+  labels:
+    related-to: dbaas-operator
+    type: dbaas-vendor-service
+spec:
+  credentialsRef:
+    name: crunchy-secret
+  providerRef:
+    name: crunchy-bridge-registration

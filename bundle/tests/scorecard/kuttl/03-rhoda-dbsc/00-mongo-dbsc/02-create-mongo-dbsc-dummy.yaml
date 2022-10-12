@@ -1,0 +1,10 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSConnection
+metadata:
+  name: mongo-temp
+  namespace: mongo-test-project
+spec:
+  inventoryRef:
+    name: mongo-db-provider-account
+    namespace: redhat-dbaas-operator
+  instanceID: tempvalue

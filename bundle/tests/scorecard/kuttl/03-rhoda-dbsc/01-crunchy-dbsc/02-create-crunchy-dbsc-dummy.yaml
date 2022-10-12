@@ -1,0 +1,10 @@
+apiVersion: dbaas.redhat.com/v1alpha1
+kind: DBaaSConnection
+metadata:
+  name: crunchy-temp
+  namespace: crunchy-test-project
+spec:
+  inventoryRef:
+    name: crunchy-db-provider-account
+    namespace: redhat-dbaas-operator
+  instanceID: tempvalue

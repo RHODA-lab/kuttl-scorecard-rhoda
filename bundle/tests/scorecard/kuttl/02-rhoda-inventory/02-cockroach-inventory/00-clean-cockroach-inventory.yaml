@@ -1,0 +1,11 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: v1
+    kind: Secret
+    name: cockroach-secret
+    namespace: redhat-dbaas-operator
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSInventory
+    name: cockroach-db-provider-account
+    namespace: redhat-dbaas-operator

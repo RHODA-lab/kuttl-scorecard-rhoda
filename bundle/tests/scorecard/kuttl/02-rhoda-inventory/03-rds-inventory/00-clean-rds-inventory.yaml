@@ -1,0 +1,11 @@
+apiVersion: kuttl.dev/v1beta1
+kind: TestStep
+delete:
+  - apiVersion: v1
+    kind: Secret
+    name: rds-secret
+    namespace: redhat-dbaas-operator
+  - apiVersion: dbaas.redhat.com/v1alpha1
+    kind: DBaaSInventory
+    name: rds-db-provider-account
+    namespace: redhat-dbaas-operator
