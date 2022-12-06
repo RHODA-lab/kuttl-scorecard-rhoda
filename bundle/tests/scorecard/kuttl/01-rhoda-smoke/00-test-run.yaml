@@ -18,16 +18,12 @@ spec:
         # Use this environment variable to pass args to the ods-ci run script in the container
         - name: RUN_SCRIPT_ARGS
           value: "/tmp/rhoda-ci-test-variables/test-variables.yaml"
-        - name: REPORT_PORTAL_CONFIG
-          value: "/tmp/rhoda-ci-rp-config/rp_config"
       volumeMounts:
           # Mount the test-variables to prevent leaking secure info for the cluster you test against
         - name: rhoda-ci-test-variables
           mountPath: /tmp/rhoda-ci-test-variables
         - name: rhoda-ci-test-output
           mountPath: /tmp/test-output
-        - name: rhoda-ci-rp-config
-          mountPath: /tmp/rhoda-ci-rp-config
   restartPolicy: Never
   volumes:
     - name: rhoda-ci-test-variables
@@ -36,6 +32,3 @@ spec:
     - name: rhoda-ci-test-output
       persistentVolumeClaim:
         claimName: rhoda-ci
-    - name: rhoda-ci-rp-config
-      secret:
-        secretName: rhoda-ci-rp-config
