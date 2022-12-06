@@ -1,3 +1,4 @@
 #Ignore the kubeconfig and kuttl-test report files
 kubeconfig
 kuttl-test.json
+*test-variables.yaml
