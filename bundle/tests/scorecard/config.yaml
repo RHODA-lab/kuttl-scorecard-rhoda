@@ -19,3 +19,21 @@ stages:
     storage:
       spec:
         mountPath: {}
+  - entrypoint:
+    - entrypoint
+    - 00-rhoda-settings
+    - 02-rhoda-inventory
+    - 03-rhoda-dbsc
+    - 04-rhoda-service-binding
+    - 05-rhoda-provision-db
+    image: quay.io/operator-framework/scorecard-test-kuttl:latest
+    labels:
+      cluster-product: osd
+      cluster-size: medium
+      phase: msp-main
+      test: smoke
+      suite: smoke-suite
+    storage:
+      spec:
+        mountPath: {}
+
